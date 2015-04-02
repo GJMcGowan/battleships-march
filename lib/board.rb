@@ -4,7 +4,7 @@ class Board
 
   attr_reader :grid, :number_of_pieces
 
-  def initialize options
+  def initialize(options = {})
     size = options.fetch(:size, DEFAULT_SIZE)
     cell = options.fetch(:cell)
     @number_of_pieces = options.fetch(:number_of_pieces, DEFAULT_NUMBER_OF_PIECES)

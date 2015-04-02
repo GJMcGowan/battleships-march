@@ -1,0 +1,11 @@
+<%= @board1.place(@ship, params[:coords].to_sym) %>
+
+<table border="1" style="width:100%">
+  <% @board.each_slice(Math.sqrt(@board.size)) do |row| %>
+    <tr>
+      <% row.each do |cell| %>
+      <td> <%= cell.last.content.class.name %> </td>
+      <% end %>
+    </tr>
+    <% end %>
+</table>

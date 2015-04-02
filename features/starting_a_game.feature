@@ -3,10 +3,13 @@ Feature: Starting the game
   As a nostalgic player
   I want to start a new game
 
-  Scenario: Registering
+  Scenario: Player enters the website
     Given I am on the homepage
-    And I follow "New Game"
-    And I should see "What's your name?"
-    When I fill in first name with "Paul"
-    And I fill in surname with "Wallis"
-    Then I should see "Hello Paul Wallis"
+    When I follow "New Game" link
+    Then I should be on the registration page
+
+  Scenario: Player is on the registration page
+    Given I am on the registration page
+    When I fill in everything needed to start a game
+    And I click the "Start Game" button
+    Then I am taken to the game page
